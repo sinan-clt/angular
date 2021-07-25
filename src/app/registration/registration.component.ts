@@ -23,6 +23,7 @@ export class RegistrationComponent implements OnInit {
     this.serve.dataInsert(this.res).subscribe(result=>{
       // console.log(result)
       this.message=result
+      window.location.reload();
     })
   }
 }
