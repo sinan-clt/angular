@@ -1,0 +1,63 @@
+<div class="container bg-light" id="cch">
+  <div class=" w-100">
+    <div class="col-lg-12 col-12 col-md-12">
+
+    <div>
+   <h1 class="pt-3 mb-3 " style="font-weight: 550;">User Registration</h1>
+  </div>
+    <form class="example-form" (ngSubmit)=insertFn()>
+
+      <mat-form-field class="example-full-width " appearance="standard">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder=""  value="" required [(ngModel)]="res.f_name" name="f_name">                                    <!--/////defining things here//// -->
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width" appearance="standard">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="" value="" required [(ngModel)]="res.l_name" name="l_name">
+      </mat-form-field>
+
+   
+
+      <mat-form-field appearance="standard" class="example-full-width">
+        <mat-label>Date Of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" required [(ngModel)]="res.dob" name="dob">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      
+      <!-- <mat-radio-group aria-label="Select an option" >
+        <mat-radio-button value="option1" name="gender"  class="pt-3" [(ngModel)]="res.gender">Male</mat-radio-button>
+        <mat-radio-button value="option2" name="gender" class="pt-3" [(ngModel)]="res.gender">Female</mat-radio-button>
+      </mat-radio-group> -->
+<!-- 
+      <input name="gender"  type="radio" value="1"  [(ngModel)]="res.gender" >Male
+      <input name="gender"  type="radio" value="1"  [(ngModel)]="res.gender" >Female -->
+      
+      <div class="formgroup mt-3">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male" [(ngModel)]="res.gender">
+        <label class="form-check-label" for="inlineRadio1">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female" [(ngModel)]="res.gender">
+        <label class="form-check-label" for="inlineRadio2">Female</label>
+      </div>
+      
+    </div>
+
+
+      <mat-form-field class="example-full-width pt-2" appearance="standard">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="" value="" required name="email" [(ngModel)]="res.email">
+      </mat-form-field>
+
+      <button mat-raised-button color="warn" class="mt-3">Cancel</button>
+      <button mat-raised-button color="accent" class="ml-4">Register</button>
+
+      {{message }}
+    </form>
+    
+  </div>
+  </div>
+</div>
